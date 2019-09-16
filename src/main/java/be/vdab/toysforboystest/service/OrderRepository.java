@@ -1,4 +1,4 @@
-package be.vdab.toysforboystest.services;
+package be.vdab.toysforboystest.service;
 
 import be.vdab.toysforboystest.entity.Order;
 

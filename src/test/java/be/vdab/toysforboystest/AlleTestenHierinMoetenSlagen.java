@@ -1,7 +1,7 @@
 package be.vdab.toysforboystest;
 
 import be.vdab.toysforboystest.entity.*;
-import be.vdab.toysforboystest.repositories.CustomOrderRepositoryImpl;
+import be.vdab.toysforboystest.repository.CustomOrderRepositoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

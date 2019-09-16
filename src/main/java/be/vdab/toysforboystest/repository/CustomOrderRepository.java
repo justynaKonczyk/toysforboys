@@ -1,4 +1,4 @@
-package be.vdab.toysforboystest.repositories;
+package be.vdab.toysforboystest.repository;
 
 import be.vdab.toysforboystest.entity.Order;
 

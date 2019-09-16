@@ -1,6 +1,5 @@
 package be.vdab.toysforboystest.entity;
 
-import com.sun.istack.internal.NotNull;
 import lombok.*;
 
 import javax.persistence.*;

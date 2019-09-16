@@ -1,7 +1,7 @@
-package be.vdab.toysforboystest.services;
+package be.vdab.toysforboystest.service;
 
 import be.vdab.toysforboystest.entity.Order;
-import be.vdab.toysforboystest.repositories.CustomOrderRepository;
+import be.vdab.toysforboystest.repository.CustomOrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

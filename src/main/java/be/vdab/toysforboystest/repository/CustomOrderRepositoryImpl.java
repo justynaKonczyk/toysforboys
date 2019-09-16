@@ -1,4 +1,4 @@
-package be.vdab.toysforboystest.repositories;
+package be.vdab.toysforboystest.repository;
 
 import be.vdab.toysforboystest.entity.Order;
 import org.springframework.stereotype.Repository;
@@ -17,12 +17,12 @@ public class CustomOrderRepositoryImpl implements CustomOrderRepository{
     }
 
     @Override
-    public Optional<Order> findById(Long id) {
+    public Optional<Order> findById(Long id){
         return Optional.ofNullable(manager.find(Order.class, id));
     }
 
     @Override
     public List<Order> findUnshipped() {
-        return manager.createQuery("select o from Order o where o.status not in ('SHIPPED','CANCELLED')").getResultList();
+        return manager.createQuery("select o from Order o where o.status not in ('SHIPPED','CANCELLED') order by o.ordered asc").getResultList();
     }
 }
