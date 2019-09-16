@@ -15,7 +15,8 @@ public class ProductLine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "name")
     private String name;
@@ -24,6 +25,6 @@ public class ProductLine {
     private String description;
 
     @Column(name = "version")
-    private Integer version;
+    private int version;
 
 }

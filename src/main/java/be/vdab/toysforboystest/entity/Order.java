@@ -19,7 +19,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private long id;
 
     @Column(name = "ordered")
     private LocalDate ordered;
@@ -38,7 +38,7 @@ public class Order {
     private Customer customer;
 
     @Column(name = "version")
-    private Integer version;
+    private int version;
 
     @Enumerated(EnumType.STRING)
     private Status status;

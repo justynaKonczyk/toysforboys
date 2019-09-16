@@ -2,7 +2,6 @@ package be.vdab.toysforboystest.entity;
 
 public enum Status {
 
-    WAITING,
-    SHIPPED,
-    CANCELLED,
+    CANCELLED,DISPUTED,PROCESSING,RESOLVED,SHIPPED,WAITING
+
 }

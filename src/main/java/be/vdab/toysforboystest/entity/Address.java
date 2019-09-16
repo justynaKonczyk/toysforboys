@@ -2,6 +2,7 @@ package be.vdab.toysforboystest.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -9,9 +10,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Address {
 
-    @Column(name = "streetandnumber")
+    @Column(name = "streetAndNumber")
     private String streetAndNumber;
 
     @Column(name = "city")
@@ -22,7 +24,5 @@ public class Address {
 
     @Column(name = "postalcode")
     private String postalcode;
-
-    protected Address(){}
 
 }

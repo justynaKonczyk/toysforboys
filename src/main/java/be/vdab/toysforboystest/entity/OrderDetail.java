@@ -1,8 +1,7 @@
 package be.vdab.toysforboystest.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.sun.istack.internal.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,7 +9,8 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "orderdetails")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDetail {
@@ -19,27 +19,28 @@ public class OrderDetail {
     private OrderDetailId orderDetailId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "productid", insertable = false, updatable = false)
+    @JoinColumn(name = "productId", insertable = false, updatable = false)
     private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "orderid", insertable = false, updatable = false)
+    @JoinColumn(name = "orderId", insertable = false, updatable = false)
     private Order order;
 
-    @Column(name = "ordered")
-    private Integer ordered;
 
-    @Column(name = "priceeach")
+    @Column(name = "ordered")
+    private int ordered;
+
+    @Column(name = "priceEach")
     private BigDecimal priceEach;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-       if (o == null || getClass() != o.getClass()) return false;
-       OrderDetail that = (OrderDetail) o;
-       return Objects.equals(orderDetailId, that.orderDetailId) &&
-               Objects.equals(ordered, that.ordered) &&
-               Objects.equals(priceEach, that.priceEach);
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderDetail that = (OrderDetail) o;
+        return Objects.equals(orderDetailId, that.orderDetailId) &&
+                Objects.equals(ordered, that.ordered) &&
+                Objects.equals(priceEach, that.priceEach);
     }
 
     @Override

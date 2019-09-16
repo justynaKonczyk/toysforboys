@@ -1,7 +1,7 @@
 package be.vdab.toysforboystest;
 
 import be.vdab.toysforboystest.entity.*;
-import be.vdab.toysforboystest.services.JpaOrderRepository;
+import be.vdab.toysforboystest.repositories.CustomOrderRepositoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,13 +23,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @Sql("/insertTestData.sql")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import(JpaOrderRepository.class)
+@Import(CustomOrderRepositoryImpl.class)
 public class AlleTestenHierinMoetenSlagen extends AbstractTransactionalJUnit4SpringContextTests {
 
     private final static String ORDERS = "orders";
 
     @Autowired
-    private JpaOrderRepository repository;
+    private  CustomOrderRepositoryImpl repository;
 
     private Order order;
     private Customer customer;

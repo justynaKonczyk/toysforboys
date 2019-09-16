@@ -2,8 +2,8 @@ package be.vdab.toysforboystest.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -16,7 +16,8 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "name")
     private String name;
@@ -27,20 +28,23 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "instock")
-    private Integer inStock;
+    @Column(name = "inStock")
+    private int inStock;
 
-    @Column(name = "inorder")
-    private Integer inOrder;
+    @Column(name = "inOrder")
+    private int inOrder;
 
     @Column(name = "price")
     private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "productlineid")
+    @JoinColumn(name = "productlineId")
     private ProductLine productLine;
 
     @Column(name = "version")
-    private Integer version;
+    private int version;
 
+    public BigDecimal getPrice() {
+        return price.setScale(1);
+    }
 }
